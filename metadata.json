@@ -49,6 +49,12 @@
     },
     {
       "operatingsystem": "Archlinux"
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "12.3"
+      ]
     }
   ],
   "requirements": [

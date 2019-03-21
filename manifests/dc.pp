@@ -59,6 +59,10 @@ class samba::dc(
   Optional[String] $cleanup                                       = undef,
 ) inherits ::samba::params{
 
+  if $facts['os']['family'] == 'Suse' {
+    fail('samba::dc is not supported on this OS')
+  }
+
   case $dnsbackend {
     'internal': {
       $sambadns   = 'SAMBA_INTERNAL'

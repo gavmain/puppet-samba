@@ -71,6 +71,25 @@ class samba::params(
           $krbconffile            = '/etc/krb5.conf'
           $packagepyyaml          = 'python2-yaml'
       }
+      'Suse': {
+          $cleanup                = undef
+          $packagesambadc         = undef
+          $packagesambaclassic    = 'samba'
+          $packagesambawinbind    = 'samba-winbind'
+          $packagesambansswinbind = 'samba-winbind'
+          $packagesambapamwinbind = 'samba-winbind'
+          $packagesambaclient     = 'samba-client'
+          $servivesambadc         = undef
+          $servivesmb             = 'smb'
+          $servivewinbind         = 'winbind'
+          $sambacmd               = undef
+          $sambaclientcmd         = '/usr/bin/smbclient'
+          $sambaoptsfile          = '/etc/sysconfig/samba'
+          $sambaoptstmpl          = "${module_name}/suse-samba.erb"
+          $smbconffile            = '/etc/samba/smb.conf'
+          $krbconffile            = '/etc/krb5.conf'
+          $packagepyyaml          = 'python-PyYAML'
+      }
       default: {
           fail('unsupported os')
       }
